@@ -1,13 +1,213 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',FontAwesome, sans-serif;
+  outline: none;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body {
+  background-color: #469EE7;
+}
+h1 {
+  color: #250933;
+  text-shadow: 0px 4px 15px rgba(252, 0, 255, 0.5);
+}
+p.txt {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+span.spec {
+  text-shadow: 0px 4px 5px rgba(252, 0, 255, 0.5);
+  font-style: italic;
+}
+.ipcont {
+  position: relative;
+  margin-top: 5px;
+}
+input[type="search"], .icon {
+  position: absolute;
+}
+input[type="search"] {
+  padding: 5px 10px 5px 35px;
+  background: rgba(70, 158, 231, 0.2);
+  border: 0;
+  border-bottom: 2px dashed rgba(252, 0, 255, 0.7);
+  width: 100%;
+  color: #fff;
+  font-weight: 600;
+}
+.icon {
+  color: rgba(252, 0, 255, 0.7);
+  padding-left: 10px;
+  padding-top: 2px;
+}
+label {
+  color: #fff;
+  font-weight: 600;
+}
+.purpleCont {
+  background: rgba(37, 9, 51, 0.9);
+  border: 2px solid rgba(252, 0, 255, 0.5);
+  box-shadow: 0px 16px 55px -12px #0A060F;
+  border-radius: 15px;
+  padding: 20px 30px 60px 30px;
+}
+.overScroll {
+  overflow-y: scroll;
+}
+/* width */
+.overScroll::-webkit-scrollbar {
+  width: 3px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Track */
+.overScroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 10px 0px;
+}
+
+/* Handle */
+.overScroll::-webkit-scrollbar-thumb {
+  background: rgba(252, 0, 255, 0.5);
+}
+
+/* Handle on hover */
+.overScroll::-webkit-scrollbar-thumb:hover {
+  background: #FC00FF;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.hfwdth {
+  width: 49%;
+}
+.pad {
+  padding: 0px 50px;
+}
+.mgbtom {
+  margin-bottom: 30px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+img.movieImg {
+  height: 60px;
+}
+.movieCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(70, 158, 231, 0.2);
+  border: 1.7px dashed rgba(252, 0, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+button {
+  padding: 5px 16px;
+  border-radius: 5px;
+  border: 0;
+}
+.enabled {
+  color: #fff;
+  background: rgba(252, 0, 255, 0.5);
+  cursor: pointer;
+}
+.disabled {
+  color: rgba(196, 196, 196, 0.4);
+  background: #0A060F;
+  cursor: not-allowed;
+}
+.mvDeets {
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 60%;
+}
+.flexr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+.imgwdth {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.btnWdth {
+  width: 20%;
+  text-align: end;
+}
+header, footer {
+  height: 6vh;
+}
+p.txt {
+  height: 3vh;
+}
+.pad {
+  height: 85vh;
+}
+.flex {
+  height: 60vh;
+}
+.ellpse {
+  height: 60px;
+}
+
+@media (max-width: 768px) {
+  .flex {
+    display: block;
+  }
+  .hfwdth {
+    width: 100%;
+  }
+  .purpleCont {
+    padding: 10px 15px 50px 15px;
+  }
+  .pad {
+    padding: 0px 20px;
+  }
+  .mgTop {
+    margin-top: 20px;
+  }
+  .mgbtom {
+    margin-bottom: 20px;
+  }
+  .movieCont {
+    display: block;
+    padding: 15px;
+  }
+  .flexr {
+    width: 100%;
+  }
+  .btnWdth {
+    width: 100%;
+    margin-top: 10px;
+  }
+  button {
+    width: 100%;
+    padding: 8px 15px;
+  }
+  footer {
+    display: none;
+  }
+  .overScroll {
+    height: 30vh;
+  }
 }
