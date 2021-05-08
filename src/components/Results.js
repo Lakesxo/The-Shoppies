@@ -1,14 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Movie from './Movie'
 import Button from './Button'
+import axios from 'axios'
+import {MovieSearchContext} from './MovieSearchContext'
+import InputSearch from './InputSearch'
+
 
 const Results = () => {
+    const [items, setItems] = useState([])
+    const [search, setSearch] = useContext(MovieSearchContext);
+    useEffect(() => {
+        axios(`http://www.omdbapi.com/?s=${search}&apikey=6d0a4f7b&`)
+          .then((result) => {
+              setItems(result.data.Search)
+            }
+          ).catch((err)=> {
+            console.log(err)
+          })
+      }, [])
+
+
     return (
         <div className="purpleCont hfwdth overScroll">
             <label htmlFor="Results">Results :</label>
-            <Movie img="https://res.cloudinary.com/dt9pwfpi5/image/upload/v1619434294/dark-main_tauqht.png" title="Lakes ojusticeo" year="1998" button={<Button text="Nominate" classs="enabled"/>} />
-            <Movie img="https://res.cloudinary.com/dt9pwfpi5/image/upload/v1606898185/undraw_secure_login_pdn4_sbayea.png" title="Lakes bando" year="1969" button={<Button text="Nominate" classs="disabled"/>} />
-            <Movie img="https://res.cloudinary.com/dt9pwfpi5/image/upload/v1607514019/undraw_welcome_3gvl_athq0w.png" title="From deep lakes" year="2020" button={<Button text="Nominate" classs="enabled"/>} />
+            {
+                items.map(item => <Movie img={item.Poster} title={item.Title} year={item.Year} button={<Button text="Nominate" classs="enabled"/>} key={item.imdbID}/>)
+            }
         </div>
     )
 }
