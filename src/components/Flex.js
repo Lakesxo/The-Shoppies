@@ -2,11 +2,11 @@ import React from 'react'
 import Nominations from './Nominations'
 import Results from './Results'
 
-const Flex = () => {
+const Flex = ({ sendItems, listArr, nomFunc, removeNomination, btnState }) => {
     return (
         <div className="flex">
-            <Results />
-            <Nominations />
+            <Results items={sendItems} nomFunc={nomFunc} btnState={btnState} />
+            <Nominations list={listArr} removeNomination={removeNomination}/>
         </div>
     )
 }

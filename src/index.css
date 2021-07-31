@@ -32,7 +32,7 @@ span.spec {
   position: relative;
   margin-top: 5px;
 }
-input[type="search"], .icon {
+.icon {
   position: absolute;
 }
 input[type="search"] {
@@ -43,6 +43,7 @@ input[type="search"] {
   width: 100%;
   color: #fff;
   font-weight: 600;
+  margin-bottom: 15px;
 }
 .icon {
   color: rgba(252, 0, 255, 0.7);
@@ -58,7 +59,7 @@ label {
   border: 2px solid rgba(252, 0, 255, 0.5);
   box-shadow: 0px 16px 55px -12px #0A060F;
   border-radius: 15px;
-  padding: 20px 30px 60px 30px;
+  padding: 25px 30px;
 }
 .overScroll {
   overflow-y: scroll;
@@ -102,6 +103,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: -1;
 }
 img.movieImg {
   height: 60px;
@@ -160,14 +162,25 @@ header, footer {
 p.txt {
   height: 3vh;
 }
-.pad {
-  height: 85vh;
-}
 .flex {
   height: 60vh;
 }
 .ellpse {
   height: 60px;
+}
+p.dev {
+  text-align: center;
+  margin-top: 80px;
+  font-weight: 500;
+  z-index: 100;
+  margin-bottom: 150px;
+  font-size: 18px;
+}
+a { 
+  text-decoration: none;
+  padding-bottom: 0.5px;
+  border-bottom: 2px solid rgba(37, 9, 51, 0.9);
+  color: rgba(37, 9, 51, 0.9);
 }
 
 @media (max-width: 768px) {
@@ -177,11 +190,16 @@ p.txt {
   .hfwdth {
     width: 100%;
   }
+  p.dev {
+    margin-top: 0px;
+    margin-bottom: 100px;
+  }
   .purpleCont {
-    padding: 10px 15px 50px 15px;
+    padding: 20px 15px;
   }
   .pad {
     padding: 0px 20px;
+    margin-bottom: 250px;
   }
   .mgTop {
     margin-top: 20px;
@@ -208,6 +226,6 @@ p.txt {
     display: none;
   }
   .overScroll {
-    height: 30vh;
+    height: 40vh;
   }
 }
