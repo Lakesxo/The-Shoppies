@@ -3,13 +3,12 @@ import Movie from './Movie'
 import Button from './Button'
 
 
-const Results = ({ items, nomFunc, btnState }) => {
-
+const Results = ({ items, nomFunc, listArr }) => {
   return (
     <div className="purpleCont hfwdth overScroll">
       <label htmlFor="Results">Results :</label>
       {
-        items.map(item => <Movie img={item.Poster} title={item.Title} year={item.Year} button={<Button text="Nominate" func={() => nomFunc(item)} classs={btnState ? "enabled"  : "disabled"} />} key={item.imdbID}/>)
+        items.map(item => <Movie img={item.Poster} title={item.Title} year={item.Year} button={<Button text="Nominate" disabled={listArr.includes(item)} func={() => nomFunc(item)} classs={listArr.includes(item) ? "disabled"  : "enabled"} />} key={item.imdbID}/>)
       }
     </div>
   )

@@ -10,7 +10,6 @@ function App() {
   const [items, setItems] = useState([])
   const [input, setInput] = useState('')
   const [nominationList, setNominationList] = useState([])
-  const [btnState, setBtnState] = useState(true)
 
   const handleChange = (event) => {
     setInput(event.target.value)
@@ -21,9 +20,11 @@ function App() {
   }
 
   const handleNomination = (movie) => {
-    const nomArr = [...nominationList, movie]
-    setNominationList(nomArr)
-    saveToLocalStorage(nominationList)
+    if (nominationList.length <= 4) {
+      const nomArr = [...nominationList, movie]
+      setNominationList(nomArr)
+      saveToLocalStorage(nomArr)
+    }
   }
 
   const removeNomination = (movie) => {
@@ -53,12 +54,22 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    if (nominationList.length === 5) {
+      alert('You have reached the maximum number of 5 nominations')
+    } 
+  }, [nominationList])
+
+
 
   return (
     <>
       <Header />
       <Text />
-      <Body itemsFromProps={items} handleFunc={handleSearch} value={input} funcValue={handleChange} nomList={nominationList} nomFunc={handleNomination} removeNomination={removeNomination} btnState={btnState} />
+      <Body 
+        itemsFromProps={items} handleFunc={handleSearch} value={input} funcValue={handleChange} 
+        nomList={nominationList} nomFunc={handleNomination} removeNomination={removeNomination}
+       />
       <Me />
       <Footer />
     </>
